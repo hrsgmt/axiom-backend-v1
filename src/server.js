@@ -10,7 +10,8 @@ import logoutRoute from "./routes/auth/logout.js";
 import meRoute from "./routes/me.js";
 
 const app = Fastify({ logger: true });
-app.use(cors({ origin: "https://axiom-frontend-l53b.onrender.com", credentials: true }));
+app.use(cors());
+app.use((req,res,next)=>{res.header("Access-Control-Allow-Origin","*");res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept, Authorization");res.header("Access-Control-Allow-Methods","GET, POST, PUT, DELETE, OPTIONS");next();});
 
 await app.register(cors, {
   origin: true,
