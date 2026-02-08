@@ -29,5 +29,5 @@ await app.register(meRoute, { prefix: "/api" });
 
 app.get("/", () => ({ ok: true }));
 
-await app.listen({ port: 4000, host: "0.0.0.0" });
+await app.listen({ port: process.env.PORT || 4000, host: "0.0.0.0" });
 app.get("/__proof__", async () => ({ build: "NEW_SERVER_OK" }));
