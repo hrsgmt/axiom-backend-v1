@@ -1,3 +1,4 @@
+import usersRoute from "./routes/users.js";
 import postsRoute from "./routes/posts.js";
 import profileRoute from "./routes/profile.js";
 import "dotenv/config";
