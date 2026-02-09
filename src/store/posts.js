@@ -14,3 +14,10 @@ export function createPost(userId, content) {
 export function listPosts(userId) {
   return posts.filter(p => p.userId === userId);
 }
+
+export function deletePost(userId, postId) {
+  const index = posts.findIndex(p => p.id === postId && p.userId === userId);
+  if (index === -1) return false;
+  posts.splice(index, 1);
+  return true;
+}

@@ -1,5 +1,5 @@
 import { authGuard } from "../middleware/auth.js";
-import { createPost, listPosts } from "../store/posts.js";
+import { createPost, listPosts, deletePost } from "../store/posts.js";
 
 export default async function (app) {
 
@@ -13,6 +13,12 @@ export default async function (app) {
   app.get("/posts", { preHandler: authGuard }, async (req) => {
     const user = req.user;
     return { posts: listPosts(user.id) };
+  });
+
+  app.delete("/posts/:id", { preHandler: authGuard }, async (req) => {
+    const user = req.user;
+    const ok = deletePost(user.id, req.params.id);
+    return { success: ok };
   });
 
 }
