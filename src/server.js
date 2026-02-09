@@ -26,7 +26,7 @@ await app.register(profileRoute, { prefix: "/api" });
 await app.register(postsRoute, { prefix: "/api" });
 await app.register(likesRoute, { prefix: "/api" });
 console.log("POSTS ROUTE REGISTERED");
-app.get("/", () => ({ ok: true }));
+app.get("/", () => ({ AXIOM_REAL_SERVER: true }));
 app.get("/__proof__", async () => ({ build: "NEW_SERVER_OK" }));
 // rebuild Mon Feb  9 01:18:55 IST 2026
 app.get("/whoami", async () => ({ repo:"axiom-backend-strong", build:"NEW", time:Date.now() }));
