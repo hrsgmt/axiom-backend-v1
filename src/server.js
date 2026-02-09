@@ -1,3 +1,4 @@
+console.log("SERVER_FILE_VERSION = 2026-02-09-LIKES");
 import usersRoute from "./routes/users.js";
 import usersRoute from "./routes/users.js";
 import postsRoute from "./routes/posts.js";
