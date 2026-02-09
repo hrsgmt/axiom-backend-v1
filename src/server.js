@@ -1,6 +1,6 @@
+import usersRoute from "./routes/users.js";
 console.log("SERVER_FILE_VERSION = 2026-02-09-LIKES");
 REMOVED from "./routes/users.js";
-import usersRoute from "./routes/users.js";
 import postsRoute from "./routes/posts.js";
 import profileRoute from "./routes/profile.js";
 import "dotenv/config";
@@ -25,7 +25,6 @@ await app.register(meRoute, { prefix: "/api" });
 await app.register(profileRoute, { prefix: "/api" });
 await app.register(postsRoute, { prefix: "/api" });
 console.log("POSTS ROUTE REGISTERED");
-await app.register(usersRoute, { prefix: "/api" });
 app.get("/", () => ({ ok: true }));
 app.get("/__proof__", async () => ({ build: "NEW_SERVER_OK" }));
 // rebuild Mon Feb  9 01:18:55 IST 2026
