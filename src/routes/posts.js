@@ -20,6 +20,7 @@ export default async function (app) {
 
   // feed
   app.get("/feed", { preHandler: authGuard }, async () => {
+  app.get("/debug-likes", async () => ({ ok: "likes file loaded" }));
     return { posts: listFeed() };
   });
 
